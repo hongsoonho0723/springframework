@@ -20,6 +20,7 @@ public class MemberService {
 	
 	public void serviceInsert() {
 		System.out.println("MemberService의 serviceInsert 호출됨...");
+		System.out.println("member~ = "+member);
 		memberDAO.insert(member);
 	}
 	

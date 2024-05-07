@@ -2,6 +2,6 @@ package sample03;
 
 public interface BookDAO {
 
-	void insert(BookVO bookVO);
+	public void insert(BookVo bookVo);
 	
 }
