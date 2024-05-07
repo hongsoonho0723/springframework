@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="sample03.BookController" id="controller">
+	
+	
+	</bean>
+	<bean class="sample03.BookDAOImpl" id="dao">
+		<constructor-arg ref="vo"/>
+	</bean>
+	<bean class="sample03.BookVO" id="vo">
+		<constructor-arg value="spring"/>
+		<constructor-arg value="홍순호"/>
+		<constructor-arg value="20000"/>
+		<constructor-arg value="2024-05-07"/>
+	</bean>
+	
+
+
+</beans>
