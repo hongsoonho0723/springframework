@@ -16,7 +16,7 @@ public class BookController {
 	}
 	
 	public void bookInsert() {
-		
+		bookDao.insert(bookVo);
 	}
 
 	
