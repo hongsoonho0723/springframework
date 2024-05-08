@@ -2,7 +2,7 @@ package sample03;
 
 public class BookController {
 
-	private BookDAO bookDAO;
+	private BookDAO bookDao;
 	private BookVo bookVo;
 	
 	
@@ -12,20 +12,20 @@ public class BookController {
 	}
 	
 	
-	public BookController(BookDAO bookDAO,BookVo bookVo) {
+	public BookController(BookDAO bookDao,BookVo bookVo) {
 		System.out.println("BookController BookController(BookDAO bookDAO,BookVo bookVo)");
-		System.out.println("bookDAO = "+bookDAO);
+		System.out.println("bookDao = "+bookDao);
 		System.out.println("bookVo = "+bookVo);
-		this.bookDAO=bookDAO;
+		this.bookDao=bookDao;
 		this.bookVo=bookVo;
 		
 	}
 	
 	public void bookInsert() {
 		System.out.println("BookController bookInsert 호출");
-		System.out.println("bookDAO = "+bookDAO);
+		System.out.println("bookDao = "+bookDao);
 		System.out.println("bookVo = "+bookVo);
-		bookDAO.insert(bookVo);
+		bookDao.insert(bookVo);
 	}
 
 	

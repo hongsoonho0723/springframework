@@ -10,6 +10,11 @@
 		<config>src/main/java/sample01/applicationContext.xml</config>
 		<config>src/main/java/sample02/springDI_Constructor.xml</config>
 		<config>src/main/java/sample03/springDI_Constructor.xml</config>
+		<config>src/main/java/sample04/springDI_setter.xml</config>
+		<config>src/main/java/sample05/applicationContext.xml</config>
+		<config>src/main/java/sample06/springDI.xml</config>
+		<config>src/main/java/sample07/springDI.xml</config>
+		<config>src/main/java/sample08/springDI.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

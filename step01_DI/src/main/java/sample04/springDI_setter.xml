@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 외부의 ~.properties 파일의 위치를 설정 -->
+
+<!-- <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+	<property name="locations">
+		<array>
+			<value>classpath:Info.properties</value>
+		</array>
+	
+	</property>
+</bean>
+ -->
+ 
+ <context:property-placeholder location="classpath:Info.properties"/>
+ 
+ 
+ 
+
+	<bean class="sample04.Student" id="st1">
+		<property name="addr" value="서울"/>
+		<property name="no" value="10"/>
+		<property name="phone" value="010-1234-5678"/>
+		<property name="name" value="soon"/>
+	</bean>
+
+	<!-- 외부의  properties파일의 key를 value로 사용해보자 -->
+	<bean class="sample04.Student" id="st2">
+		<property name="no" value="${번호}"/>
+		<property name="name" value="${name}"/>
+		<property name="addr" value="${address}"/>
+		<property name="phone" value="${phone}"/>
+	</bean>
+
+
+	<bean class="sample04.StudentDAOImpl" id="dao"/>
+	<bean class="sample04.StudentServiceImpl" id="service">
+		<property name="studentDAO" ref="dao"></property>
+	</bean>
+
+	<bean class="sample04.StudentController" id="controller">
+		<property name="studentService" ref="service"></property>
+		<property name="student" ref="st2"></property>
+	</bean>  
+
+</beans>
