@@ -1,9 +1,18 @@
 package sample08;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class BookServiceImpl implements BookService {
 
+	@Autowired
 	private EmailSender emailSender;
+	
+	@Autowired
 	private MessageSender messageSender;
+
+	@Autowired
 	private BookDAO bookDao;
 	
 	@Override
