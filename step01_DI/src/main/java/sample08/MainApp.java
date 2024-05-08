@@ -13,14 +13,13 @@ public class MainApp {
 			ApplicationContext context =
 					new ClassPathXmlApplicationContext("sample08/springDI.xml");
 					
-			/* 
+			
 			System.out.println("-------------------------------------------------");
 			
-			BoardController con =context.getBean("boardController",BoardController.class);
-			con.test();
+			BookController con =context.getBean("bookController",BookController.class);
+			con.invoker();
 			
-		}
-		*/
+		
 		
 	}
 

@@ -13,8 +13,8 @@
 		<config>src/main/java/sample04/springDI_setter.xml</config>
 		<config>src/main/java/sample05/applicationContext.xml</config>
 		<config>src/main/java/sample06/springDI.xml</config>
-		<config>src/main/java/sample07/springDI.xml</config>
 		<config>src/main/java/sample08/springDI.xml</config>
+		<config>src/main/java/sample07/springDI.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

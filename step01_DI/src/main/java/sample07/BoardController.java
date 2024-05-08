@@ -1,6 +1,6 @@
 package sample07;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Controller;
 
 @Controller // 수정하지않으면 id="boardController" @Controller("원하는 id 수정가능")
@@ -23,7 +23,9 @@ public class BoardController {
 		
 		boardService.select();
 		
-	};
+	}
+
+	
 	
 	
 }
