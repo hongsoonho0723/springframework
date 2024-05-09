@@ -1,15 +1,15 @@
 package sample08;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Component
+@Scope("prototype")
 public class BookDTO {
 
 	private String subject; 

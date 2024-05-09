@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 객체 생성 -->
+	
+	<bean class="exam.service.MemberServiceImpl" id="target"/>
+	
+	<bean class="exam.aop.AroundAdvice" id="aroundAdvice"/>
+	<bean class="exam.aop.SampleAdvice" id="sampleAdvice"/>
+
+	<aop:config>
+	
+		<aop:pointcut expression="execution(public * exam.service.MemberServiceImpl.*(..))" id="pointCut"/>
+		
+		<aop:aspect ref="aroundAdvice" order="2"> <!-- order를 통해서 호출되는 순서를 조절 -->
+			<aop:around method="around" pointcut-ref="pointCut"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="sampleAdvice" order="1"> 
+			<aop:before method="before" pointcut-ref="pointCut"/>
+			<aop:after method="afterFinally" pointcut-ref="pointCut"/>
+			<aop:after-returning method="afterReturing" pointcut-ref="pointCut" returning="obj"/> <!-- SampleAdvice.java에 리턴으로 받을 인수를 정해준다 -->
+			<aop:after-throwing method="afterThrow" pointcut-ref="pointCut" throwing="e"/> <!-- 예외로 받을 경우 SampleAdvice.java에 인수를 넣어준다  -->
+		</aop:aspect>	
+	
+	</aop:config>
+
+
+
+
+</beans>
