@@ -3,7 +3,7 @@ package exam.service;
 public class TvImpl implements Player {
 
 	@Override
-	public void start(int a) {
+	public void start(int volumn) {
 		// TODO Auto-generated method stub
 
 	}

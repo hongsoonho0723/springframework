@@ -3,20 +3,21 @@ package exam.service;
 public class AudioImpl implements Player {
 
 	@Override
-	public void start(int a) {
-		// TODO Auto-generated method stub
+	public void start(int volumn) {
 
+		System.out.println(super.getClass().getName() +"의 start(int volumn) 핵심기능...");
+		
 	}
 
 	@Override
 	public String pause() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(super.getClass().getName() +"의 pause() 핵심기능...");
+		return "hi";
 	}
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
+		System.out.println(super.getClass().getName() +"의 stop() 핵심기능...");
 
 	}
 
