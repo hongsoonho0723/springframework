@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component // id="boardDTO"
-@Scope("prototype") //필요할때마다 객체 생성
+//@Scope("prototype") //필요할때마다 객체 생성
 
 public class BoardDTO {
 	
