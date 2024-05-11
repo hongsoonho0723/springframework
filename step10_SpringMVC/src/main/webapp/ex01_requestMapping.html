@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>@RequestMapping 알아보기</h1>
+<a href="a.do">a.do요청</a><p>
+
+<a href="rem/a.do">a.do요청</a><p>
+
+<a href="rem/b.do">b.do요청</a><p>
+<a href="rem/c.do">c.do요청</a><p>
+
+<h3>get방식 </h3>
+<form action="rem/test.do" method="get">
+ 이름 <input type="text" name="name"/>
+ <input type="submit" value="전송"/>
+</form>
+
+<h3>post방식 </h3>
+<form action="rem/test.do" method="post">
+ 이름 <input type="text" name="name"/>
+ <input type="submit" value="전송"/>
+</form>
+
+<hr>
+<a href="rem/a.do?id=hee">params 요청1</a> <p>
+<a href="rem/a.do?id=jang">params 요청2</a> <p>
+
+
+</body>
+</html>
+
+

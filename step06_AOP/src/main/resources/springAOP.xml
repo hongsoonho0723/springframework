@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 객체 생성 -->
+	
+	<bean class="exam.audio.AudioImpl" id ="audio"></bean>
+	<bean class="exam.video.VideoImpl" id ="video"></bean>
+	<bean class="exam.tv.TvImpl" id ="tv"></bean>
+	<bean class="exam.advice.LogAdvice" id ="advice"></bean>
+
+	<!-- aop 설정 -->
+	<aop:config>
+		<aop:aspect ref="advice">
+			<aop:pointcut expression="execution(* exam.*.*Impl.*(..))" id="pointcut"/>
+			<aop:around method="around" pointcut-ref="pointcut"/>
+		</aop:aspect>
+	
+	
+	</aop:config>
+
+
+</beans>

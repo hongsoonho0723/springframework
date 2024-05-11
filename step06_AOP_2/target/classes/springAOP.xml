@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+ <!-- 객체 생성 -->
+ <bean class="kosta.test.tv.TvImpl" id="tv"/>
+ <bean class="kosta.test.audio.AudioImpl" id="audio"/>
+ <bean class="kosta.test.video.VideoImpl" id="video"/>
+ 
+ <bean class="kosta.test.advice.LogAdvice" id="adivce"/>
+ 
+ 
+ <!-- aop설정 -->
+ <aop:config>
+   <aop:aspect ref="adivce">
+      <aop:pointcut expression="execution(* kosta.test.*.*Impl.*(..))" id="pointcut"/>
+      <aop:around method="around" pointcut-ref="pointcut"/>
+   </aop:aspect>
+ </aop:config>
+ 
+ 
+</beans>
+
+
+
+
+
+
