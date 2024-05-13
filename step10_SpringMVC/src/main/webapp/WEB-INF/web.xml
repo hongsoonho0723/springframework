@@ -14,22 +14,7 @@
 	<!-- Processes application requests : SpringBean 설정문서 필요하다 /WEB-INF/appServlet.xml필요 
 		: 만약 설정문서의 위치와 이름 변경한다면 init-param 을 이용해서 변경가능 하다 -->
 
-	<filter>
-		<filter-name>charaterEncoding</filter-name>
-		<filter-class>
-			org.springframework.web.filter.CharacterEncodingFilter
-		</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>charaterEncoding</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
+	
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet
