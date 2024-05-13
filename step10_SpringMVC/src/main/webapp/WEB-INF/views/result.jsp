@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>
-결과 : ${requestScope.message}
+결과 : ${requestScope.message} 
 </h3>
 </body>
 </html>

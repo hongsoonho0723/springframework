@@ -1,0 +1,31 @@
+/*
+   전체(*) 적용
+    1)padding,border속성을 적용했을때 width,height 내에
+       적용될수 있도록 설정한다. -  box-sizing
+    2) 상하좌우 마진 0
+    3) 상하좌우 패딩 0
+    ) 
+*/
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ #banner에
+  1) 바탕색  blue
+  2) 글자색 white
+  3) 패딩 30px
+  4) 글자 가운데정렬
+  5) 글자크기 xx-large
+*/
+#banner{
+	background-color: blue;
+	color:white;
+	padding: 30px;
+	font-size: xx-large;
+	text-align: center;
+}
+
+

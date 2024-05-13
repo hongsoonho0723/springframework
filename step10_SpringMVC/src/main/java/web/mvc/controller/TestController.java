@@ -4,11 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller //생성
+@Slf4j
 public class TestController {
  
 	//기능
-	@RequestMapping("/test.do")
+	@RequestMapping("/")
 	public ModelAndView aa() {
 		System.out.println("test.do 요청이 왔어요~~~");
 		
@@ -22,6 +25,18 @@ public class TestController {
 		
 		
 	}
-	
+	@RequestMapping("/test2.do")
+	public String aa(String no) {
+		//System.out.println("ExceptionController no = "+no);
+		log.info("no = "+ no);
+		
+		int convertNo = Integer.parseInt(no);
+		log.info("convertNo = "+convertNo);
+		
+		int result = 100/ convertNo;
+		
+		
+		return "result";
+	}
 	
 }
