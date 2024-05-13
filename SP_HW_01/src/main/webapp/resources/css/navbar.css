@@ -1,0 +1,43 @@
+/*#navbar 안에 있는   
+  1) a태그 밑줄 제거
+*/
+#navbar ul li a{
+	text-decoration: none
+}
+
+/*
+#navbar ul태그 
+ 1) flex적용하고 
+ 2) 요소를 가운데 정렬 - justify-content
+ 3) 요소 수직을 가운데 졍렬 - align-items
+  */
+#navbar ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*#navbar 안에 ul li 태그에 
+  1)display 속성을 inline-block 으로 변경하여 
+  2) 상하=0, 죄우 10px의 margin을 적용한다.
+  3) 글자를 굵게 bold 를 설정한다.
+ */
+#navbar ul li{
+	display: inline-block;
+	margin: 0 10px;
+	font-weight: bold;
+}
+
+
+/*
+  #navbar의 
+   1)바탕색을 #F1FFFF 설정
+   2)navbar내부의 상하좌우여백 10px
+*/
+#navbar{
+	background-color: #F1FFFF;
+	padding:10px;
+}
+
+
