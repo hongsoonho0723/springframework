@@ -1,11 +1,13 @@
 package web.mvc.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 import web.mvc.dto.UserDTO;
+import web.mvc.exception.BasicException;
+import web.mvc.exception.ErrorCode;
 
 @RestController
 @Slf4j
@@ -29,8 +31,19 @@ public class AjaxController {
 		
 		//나이가 18보다 작으면 예외발생
 		if(userDTO.getAge()<18) {
-			throw new IllegalArgumentException("미성년자는 입장할수 없어요~~"); //원하지않은 값이 들어왔을때 사용하는 예외
+			//throw new IllegalArgumentException("미성년자는 입장할수 없어요~~"); //원하지않은 값이 들어왔을때 사용하는 예외
+			throw new BasicException(ErrorCode.INVALID_AGE);
+			
 		}
+		
+		if(userDTO.getId().equals("jang")) {
+			
+			throw new BasicException(ErrorCode.DUPLICATE_ID);
+			
+		}
+		
+		
+		
 		
 		return "oK2";
 		

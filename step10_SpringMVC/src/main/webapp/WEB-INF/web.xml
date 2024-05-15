@@ -5,12 +5,18 @@
 
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/spring/root-context.xml</param-value> 
-		</context-param> -->
+	<context-param> 
+	 	<param-name>contextConfigLocation</param-name> 
+		<param-value>/WEB-INF/spring/root-context.xml</param-value> 
+	</context-param> 
 
-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<!-- <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-		</listener> -->
+	<!-- Creates the Spring Container shared by all Servlets and Filters 
+		기본 스프링빈 설명문서는 /WEB-INF/applicationContext.xml필요
+		만약 위치와 이름을 변경하고 싶다면 context-parm 설정하면 된다
+	-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<!-- Processes application requests : SpringBean 설정문서 필요하다 /WEB-INF/appServlet.xml필요 
 		: 만약 설정문서의 위치와 이름 변경한다면 init-param 을 이용해서 변경가능 하다 -->
 
@@ -45,6 +51,26 @@
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
+		<url-pattern>/blog/*</url-pattern>
 	</servlet-mapping>
+
+	<!-- 관리자 전용 servlet -->
+	<servlet>
+		<servlet-name>adminServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/admin-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>adminServlet</servlet-name>
+		<url-pattern>*.admin</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>
