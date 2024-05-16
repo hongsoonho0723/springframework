@@ -1,6 +1,6 @@
 package web.mvc.exception;
 
-import lombok.Getter;
+import lombok.Getter;  
 import lombok.RequiredArgsConstructor;
 
 /*
