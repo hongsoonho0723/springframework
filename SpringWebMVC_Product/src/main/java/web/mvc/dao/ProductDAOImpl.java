@@ -1,6 +1,5 @@
 package web.mvc.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -41,35 +40,52 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public int insert(ProductDTO product) {
-		int check = codeCheck(product);
-		int result =0;
+		ProductDTO check = codeCheck(product);
 		
-		if(check==0) {
+		if(check!=null) {
+			throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
 	
-		productList.add(product);
-		if(product !=null) {
-			result = 1;
-		}else {
-			throw new MyErrorException(ErrorCode.INVALID_code);
-		}
+		}	
 		
-		
-		}
-		return result;
+		return productList.add(product) ? 1 : 0;
 	}
 
-	public int codeCheck(ProductDTO product) {
-		int result = 0;
-		
+	public ProductDTO codeCheck(ProductDTO product) {
 		String code = product.getCode();
 		for(ProductDTO dto : productList) {
 			if(dto.getCode().equals(code)) {
-				result = 1;
+
+				return dto;
 			}
 						
 		}
 		
-		return result;
+		return null;
+	}
+
+
+	@Override
+	public ProductDTO selectByCode(String code) {
+
+		for(ProductDTO dto : productList) {
+			if(dto.getCode().equals(code)) {
+				return dto;
+			}
+			
+		}
+		
+		return null;
+	}
+
+
+
+	@Override
+	public int delete(String code) {
+		ProductDTO productDTO = selectByCode(code);
+		
+		return productList.remove(productDTO) ? 1 : 0;
+		
+		
 	}
 	
 	

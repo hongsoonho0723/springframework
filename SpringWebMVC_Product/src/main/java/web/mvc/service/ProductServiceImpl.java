@@ -38,4 +38,19 @@ public class ProductServiceImpl implements ProductService {
 		return result;
 	}
 
+	@Override
+	public ProductDTO selectByCode(String code) {
+		ProductDTO productDTO =  dao.selectByCode(code);
+		
+		if(productDTO==null)throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
+		
+		return productDTO;
+	}
+
+	@Override
+	public int delete(String code) {
+		int result =dao.delete(code);
+		return result;
+	}
+
 }

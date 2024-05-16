@@ -7,10 +7,12 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum ErrorCode {
 
-	/*
-	 * 코드가 중복일때
-	 * */
-	INVALID_code(600,"코드가 중복입니다"),
+	  INVALID_PRODUCT_CODE(600, "상품코드가 잘못되었습니다."),
+	  
+	  /*
+	   * 코드가 중복일때
+	   * */
+	  DUPLICATE_PRODUCT_CODE(601, "상품코드 중복입니다."),
 	
 	INVALID_price(601,"가격이 1000~10000원 범위를 벗어났습니다");
 	
