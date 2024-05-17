@@ -30,7 +30,7 @@
 	 <tr>
 	   <th colspan="2">
 	     <a href="${pageContext.request.contextPath}/">홈으로</a>
-	     <a href="${pageContext.request.contextPath}/updateForm?code=${product.code}">수정하기</a>
+	     <a href="${pageContext.request.contextPath}/updateForm/${product.code}">수정하기</a>
 	   </th>
 	 </tr>
 	</table>

@@ -13,6 +13,8 @@ public interface ProductDAO {
 	ProductDTO selectByCode(String code);
 
 	int delete(String code);
+
+	int update(ProductDTO productDTO);
 	
 	
 }

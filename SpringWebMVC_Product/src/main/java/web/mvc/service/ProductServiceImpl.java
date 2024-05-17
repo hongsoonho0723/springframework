@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public ProductDTO selectByCode(String code) {
+	public ProductDTO selectByCode(String code) throws MyErrorException{
 		ProductDTO productDTO =  dao.selectByCode(code);
 		
 		if(productDTO==null)throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
@@ -53,4 +53,11 @@ public class ProductServiceImpl implements ProductService {
 		return result;
 	}
 
+	
+	  @Override 
+	  public int update(ProductDTO productDTO) { 
+		  
+	  return dao.update(productDTO); 
+	  }
+	 
 }

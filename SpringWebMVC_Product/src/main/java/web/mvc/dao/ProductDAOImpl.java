@@ -87,6 +87,22 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		
 	}
+
+
+
+	@Override
+	public int update(ProductDTO productDTO) {
+
+		 ProductDTO saveDTO = this.selectByCode(productDTO.getCode());
+		 
+		 if(saveDTO==null)throw new MyErrorException(ErrorCode.FAILD_UPDATE);
+		 
+		 //¼öÁ¤
+		 saveDTO.setName(productDTO.getName());
+		 saveDTO.setPrice(productDTO.getPrice());
+		 saveDTO.setDetail(productDTO.getDetail());
+		return 1;
+	}
 	
 	
 	

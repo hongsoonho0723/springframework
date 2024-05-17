@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>상품 수정 폼</h1>
-<form action="" method="post">
+<form action="${pageContext.request.contextPath}/products/${product.code}"  method="post">
 	<table border="1">
 	  <tr>
 	   <th>상품이름</th>
@@ -25,7 +25,7 @@
 	 </tr>
 	 <tr>
 	   <th colspan="2">
-	      <input type="hidden" name="code"  value="${product.code}">
+	     <%-- <input type="hidden" name="code"  value="${product.code}"> --%>
 	     <input type="submit" value="수정하기하기">
 	     <input type="reset" value="취소하기">
 	   </th>

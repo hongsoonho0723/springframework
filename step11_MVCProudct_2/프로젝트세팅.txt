@@ -1,0 +1,34 @@
+1. spring mvc legacyProject 생성
+2. pom.xml에 수정
+     java version 11 , spring version 5.3.23
+
+    추가적인 lib dependency를 추가한다.
+      ex) lombok 
+
+3. project에서 오른쪽 버튼 클릭해서 -> 빌드패스에서 수정(jre, javaversion , tomcat 체크)
+
+4. web.xml 열어서 확인
+    listener , filter , servlet 
+
+5. springbean설정문서를 확인!!
+----------------------------------------------
+step11_MVCPorduct 프로젝트를 완성
+
+step11_MVCPorduct --> 복사 step12_MVCPorductAjax
+   등록, 수정, 전체검색, 부분검색, 삭제 - ajax 변경
+     : views폴더에 있는 모든 파일을 삭제....
+     : postman을 이용해서 crud를 test한다. 
+
+      : servcie , dao 변경x
+      
+    @exception부분  -> 
+         @ControllerAdvice  vs  @RestControllerAdvice - 메소드의 리턴타입 Body(ex) ResponseEntity<?>
+
+
+
+    @Controller 부번  -> @RestController   - 메소드의 리턴타입 Body(ex) ResponseEntity<?>
+     jackson bind lib 추가 
+
+
+
+

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -78,6 +79,26 @@ public class ProductController {
 		
 		
 		return "redirect:/";
+	}
+	
+	
+	@GetMapping("/updateForm/{code}")
+	public ModelAndView updateForm(@PathVariable String code) {
+		
+		ProductDTO productDTO =  service.selectByCode(code);
+		
+		return new ModelAndView("updateForm","product",productDTO);
+				// updateForm은 jsp파일명과 연결 product는 jsp에 ${product}랑 연결
+	}
+	
+	
+	@PostMapping("/products/{code}")
+	public String update(@PathVariable String code,ProductDTO productDTO) {
+		productDTO.setCode(code);
+		
+		service.update(productDTO);
+		
+		return "redirect:/read?code="+code; //기존 req,res유지 
 	}
 	
 }
